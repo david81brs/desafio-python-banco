@@ -40,7 +40,7 @@ class bank_data():
 
 def tela_inicial():
     print("Banco Pythonico 1.0")
-    print("Digite seu primeiro nome:",end=" ")
+    print("Digite seu primeiro nome:")
     cliente = input()
     return cliente.upper()
 # class operacao_banky():

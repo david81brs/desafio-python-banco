@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import sqlite3
+import os, platform
 ''' 
 	Cria as tabelas do banco de dados do Banco Pythonico
 '''
@@ -39,22 +40,44 @@ class bank_data():
         print("Tabelas criadas!")
 
 def tela_inicial():
-    print("Banco Pythonico 1.0")
+    if platform.system()=='Linux':
+        os.system("clear")
+    print("Banco Pythonico 0.1!")
     print("Digite seu primeiro nome:")
     cliente = input()
     return cliente.upper()
-# class operacao_banky():
-#     def saldo():
+class operacao_banky():
+    def escolher_ops(chamado):
+        os.system("clear")
+        print("----Banco Py do %s----" % (chamado))
+        ops_list = ['Saque','Saldo', 'Extrato', 'Depósito', 'Transferência', 'Sair']
+        charesc = ['G', 'S', 'E', 'D', 'T', 'X']
+        print("Escolha Operação: ")
+        for opesc in range(0,len(ops_list)):
+            print("%s - Para %s" % (charesc[opesc],ops_list[opesc]))
+        print("----------------------------")
+        print("Commando:")
+        while True:
+            ops_escol = input().upper()
+            if ops_escol in charesc:
+                print("%s selecionado!" % (ops_escol))
+            else:
+                print("Não identifiquei sua escolha,")
+                print("Tente de novo.")
+            if ops_escol=='X':
+                print("Até logo!")
+                exit()
+    # def saque():
 
+    # def saldo():
 
-#     def extrato():
+    # def extrato():
 
+    # def deposito():
 
-#     def deposito():
-
-
-#     def transferencia():
+    # def transferencia():
 
 # bank_data.bank_connect()
 chamado = tela_inicial()
 print("Bem vindo, %s!" %(chamado))
+operacao_banky.escolher_ops(chamado)

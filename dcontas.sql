@@ -4,5 +4,5 @@ INSERT INTO contas (
 		)
 		VALUES (
 		'1002',
-		'3'
+		'2'
 		);

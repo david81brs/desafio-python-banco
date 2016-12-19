@@ -44,6 +44,12 @@ class bank_data():
             	FOREIGN KEY(contas_id) REFERENCES contas(id)
             );
             """)
+            cursor.execute("""
+            CREATE TABLE ops_type (
+                id_opstype INTEGER PRIMARY KEY AUTOINCREMENT,
+                operation_types TEXT NOT NULL
+            );
+            """)
             conn.close()
             
             print("Tabelas criadas!")
